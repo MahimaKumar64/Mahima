@@ -24,6 +24,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -31,6 +32,7 @@ body {
   color: var(--color-body);
   line-height: 1.5;
   font-size: 2.4rem;
+  overflow-x: hidden;
 }
 
 h1,
@@ -652,6 +654,46 @@ a {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    font-size: 1.2rem;
+    gap: 1rem;
+  }
+
+  .block {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding-bottom: 4rem;
+    background-color: #000;
+  }
+}
+
+.block__heading {
+  font-size: clamp(3.75rem, 4vw, 6.5rem);
+  line-height: 1.2;
+}
+
+.hero__tagline {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+}
+
+.btn--stretched {
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.875rem, 1.2vw, 1.125rem);
 }
 
 /*navigation bar */
@@ -810,6 +852,7 @@ a {
 /* showcase block */
 .block-showcase__image > img {
   width: 100%;
+  max-width: 500px;
 }
 
 @media screen and (min-width: 1024px) {
